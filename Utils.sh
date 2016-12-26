@@ -95,7 +95,11 @@ function launch_cmd()
     local CMD=$1   
     now=$(date)
     mylog "[INFO] [$now] cmd => $CMD"
-    eval $CMD >> "$LOG_DIR/"$HOST 2>&1
+    if  [ $LOG_TYPE == 'echo' ]; then
+	eval $CMD
+    else
+	eval $CMD >> "$LOG_DIR/"$HOST 2>&1
+    fi
     retval=$?    
     if [ $retval -ne 0 ]; then
         mylog "[Error] failed. Exiting..."
