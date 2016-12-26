@@ -43,7 +43,7 @@ function mylog()
     if  [ $LOG_TYPE == 'echo' ]; then
 	echo $INFO
     else
-	echo -e $INFO >> "$LOG_DIR/"$HOST
+	echo -e $INFO >> "$LOG_DIR/"$LOG_FILE
     fi
 
 }
