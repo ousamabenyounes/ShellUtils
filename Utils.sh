@@ -98,7 +98,7 @@ function launch_cmd()
     if  [ $LOG_TYPE == 'echo' ]; then
 	eval $CMD
     else
-	eval $CMD >> "$LOG_DIR/"$HOST 2>&1
+	eval $CMD >> "$LOG_DIR/"$LOG_FILE 2>&1
     fi
     retval=$?    
     if [ $retval -ne 0 ]; then
